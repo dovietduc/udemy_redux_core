@@ -2,6 +2,7 @@ import React from 'react'
 import {store} from '../index'
 
 
+
 function Counter() {
     const handleIncrement = function(){
         store.dispatch({
