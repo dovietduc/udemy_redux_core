@@ -19,7 +19,7 @@ function Counter() {
     }
     return (       
         <div>
-            <h2>Counter 0</h2>
+            <h2>Counter {store.getState()}</h2>
             <button onClick={handleIncrement}>Increment</button>
             <button onClick={handleDecrement}>Decrement</button>
         </div>
