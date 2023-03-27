@@ -1,15 +1,21 @@
 function createStore(reducer, initialState){
     let state = initialState;
+    let listenerCallback;
     function getState(){
         return state;
     }
     function dispatch(action){
-        state = reducer(action, state)
-        console.log(state)
+        state = reducer(action, state);
+        listenerCallback();
+        console.log('state', state);
     }    
+    function subscribe(listener){
+        listenerCallback = listener;
+    }
     return {
         getState: getState,
-        dispatch: dispatch
+        dispatch: dispatch,
+        subscribe: subscribe
     }
 }
 export default createStore;
